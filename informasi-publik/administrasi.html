@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="max-image-preview:large" />
+
+    <meta name="title" content="Administrasi | Kelurahan Garum" />
+    <title>Administrasi | Kelurahan Garum</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.blitarkota.go.id/assets/images/blitarkota-256.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700,800,900"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../main.css" />
+    <style>
+      .filter-buttons {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .filter-buttons .btn {
+        border-radius: 25px;
+        width: 150px;
+        transition: all 0.3s ease;
+        background-color: #088395; /* Primary color */
+        color: white;
+        border: none;
+      }
+      .filter-buttons .btn.active,
+      .filter-buttons .btn.btn-success {
+        background-color: #37b7c3; /* Success color */
+      }
+      .filter-buttons .btn:hover {
+        background-color: #071952; /* Dark color */
+      }
+      .card {
+        border: 1px solid #ebf4f6; /* Light color */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+
+  <body class="text-left">
+    <div class="shadow fixed-top">
+      <header class="navbar navbar-expand-lg navbar-light nav-header">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Lambang_Kabupaten_Blitar.webp/497px-Lambang_Kabupaten_Blitar.webp.png"
+              alt="Logo"
+              height="40"
+            />
+          </a>
+          <p class="m-auto h5">Kelurahan Garum</p>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="../index.html" class="nav-link">Beranda</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Profil
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="../profil/sejarah.html"
+                    >Sejarah</a
+                  >
+                  <a class="dropdown-item" href="../profil/visimisi.html"
+                    >Visi & Misi</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="../profil/strukturorganisasi.html"
+                    >Gambaran Umum Struktur Organisasi</a
+                  >
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  id="navbarDropdown2"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Informasi Publik
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <a
+                    class="dropdown-item"
+                    href="../informasi-publik/administrasi.html"
+                    >Administrasi</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="../informasi-publik/kesehatan.html"
+                    >Kesehatan</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="../informasi-publik/pendidikan.html"
+                    >Pendidikan</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="../umkm.html" class="nav-link">UMKM</a>
+              </li>
+              <li class="nav-item">
+                <a href="../dokumentasi.html" class="nav-link">Dokumentasi</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-- Content -->
+
+    <!-- Layanan Administrasi -->
+    <div class="page-header">
+      <div class="overlay text-on-title">Layanan Administrasi</div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Administrasi
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container my-5">
+      <p class="text-on-title">Persyaratan Layanan Administrasi Kelurahan</p>
+      <div class="filter-buttons my-5">
+        <button class="btn" data-filter="all">Tampilkan Semua</button>
+        <button class="btn" data-filter="akte-kelahiran">Akte Kelahiran</button>
+        <button class="btn" data-filter="akte-kematian">Akte Kematian</button>
+        <button class="btn" data-filter="kk">KK</button>
+        <button class="btn" data-filter="pindah-keluar">Pindah Keluar</button>
+        <button class="btn" data-filter="pindah-masuk">Pindah Masuk</button>
+        <button class="btn" data-filter="kia">KIA</button>
+        <button class="btn" data-filter="ktp">KTP</button>
+        <button class="btn" data-filter="oss">OSS</button>
+        <button class="btn" data-filter="skck">SKCK</button>
+      </div>
+
+      <div class="row card-container">
+        <!-- Akte Kelahiran -->
+        <div class="col-md-4 card-item my-2 akte-kelahiran">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">Akte Kelahiran</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Tanda Pelunasan PIPIL Pajak</li>
+                <li>KK Asli</li>
+                <li>KTP Asli Orang Tua</li>
+                <li>KTP Asli 2 Orang Saksi</li>
+                <li>KTP Asli Pelapor Kelahiran</li>
+                <li>
+                  Surat Keterangan Kelahiran dari Penolong Kelahiran (untuk
+                  Kelahiran Bayi Setelah TH.2017 di Bidan/RS Ket. Kelahiran Ber
+                  Stempel dan Ada No. Register)
+                </li>
+                <li>
+                  Buku Nikah/Akte Nikah/Akte Cerai (Bagi yang Orang Tua Sudah
+                  Bercerai) Asli Orang Tua
+                </li>
+                <li>No. HP Aktif</li>
+                <li>E-mail Aktif</li>
+                <li>Map Biru (Akte bagi yang Belum Punya NIK)</li>
+                <li>Map Hijau (Akte bagi yang Sudah Punya NIK)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Akte Kematian -->
+        <div class="col-md-4 card-item my-2 akte-kematian">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">Akte Kematian</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Tanda Pelunasan PIPIL Pajak</li>
+                <li>KK dan KTP Asli Jenazah</li>
+                <li>KTP Asli Orang Tua Jenazah (Bila Masih Hidup)</li>
+                <li>KTP Asli 2 Orang Saksi Kematian</li>
+                <li>KTP Asli Pelapor Kematian</li>
+                <li>KK Asli Pelapor bila Tidak 1 KK dengan Jenazah</li>
+                <li>
+                  Surat Keterangan Kematian (Dari RS Bila yang Menerangkan
+                  Kematian RS)
+                </li>
+                <li>No. HP Aktif</li>
+                <li>E-mail Aktif</li>
+                <li>Map Merah</li>
+                <li>
+                  Penetapan Pengadilan bagi yang Tidak Memiliki Data KK/KTP
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- KK -->
+        <div class="col-md-4 card-item my-2 kk">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">KK</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Tanda Pelunasan PIPIL Pajak</li>
+                <li>KK Asli</li>
+                <li>
+                  Buku Nikah Asli (Bagi yang Sudah Menikah dan Mencantumkan
+                  Kawin Tercatat di KK)
+                </li>
+                <li>Ijazah Asli (Bagi yang Melakukan Perubahan Pendidikan)</li>
+                <li>Akte Kelahiran Asli (Bagi yang Memiliki Akte Kelahiran)</li>
+                <li>No. HP Aktif</li>
+                <li>E-mail Aktif</li>
+                <li>Map Kuning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pindah Keluar -->
+        <div class="col-md-4 card-item my-2 pindah-keluar">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">Pindah Keluar</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Tanda Pelunasan PIPIL Pajak</li>
+                <li>KK Asli</li>
+                <li>
+                  Buku Nikah/Akte Nikah/Akte Cerai Asli (Bagi yang Sudah
+                  Menikah/Bercerai)
+                </li>
+                <li>Pas Foto Ukuran 3x4 2 Lembar</li>
+                <li>Alamat Tujuan Pindah/Fotokopi KK Alamat Tujuan Pindah</li>
+                <li>
+                  Pernyataan Ijin dari Pasangan Suami Istri bila yang Pindah
+                  Salah Satu dari Pasangan Suami Istri itu
+                </li>
+                <li>
+                  Pernyataan Ijin dari Orang Tua bila yang Pindah Anak di Bawah
+                  Umur 17 TH
+                </li>
+                <li>No. HP Aktif</li>
+                <li>E-mail Aktif</li>
+                <li>Map Kuning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pindah Masuk -->
+        <div class="col-md-4 card-item my-2 pindah-masuk">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">Pindah Masuk</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Tanda Pelunasan PIPIL Pajak</li>
+                <li>SKPWNI (Surat Pindah dari Daerah Asal)</li>
+                <li>KTP Asli</li>
+                <li>
+                  Buku Nikah/Akte Nikah/Akte Cerai Asli (Bagi yang Sudah
+                  Menikah/Bercerai)
+                </li>
+                <li>Ijazah Asli</li>
+                <li>Akte Kelahiran Asli (Bagi yang Memiliki Akte Kelahiran)</li>
+                <li>No. HP Aktif</li>
+                <li>E-mail Aktif</li>
+                <li>Map Kuning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- KIA -->
+        <div class="col-md-4 card-item my-2 kia">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">KIA</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Pelunasan PIPIL Pajak</li>
+                <li>KK Asli</li>
+                <li>Akte Kelahiran Asli</li>
+                <li>
+                  Foto Ukuran 3x4 Background Biru bila Tahun Kelahiran Genap,
+                  Merah bila Tahun Lahir Ganjil (Bagi yang Berumur Sudah 5
+                  TH/Lebih)
+                </li>
+                <li>Surat Kehilangan Kepolisian bila KIA Hilang</li>
+                <li>No. HP Aktif</li>
+                <li>E-mail Aktif</li>
+                <li>Map Kuning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- KTP -->
+        <div class="col-md-4 card-item my-2 ktp">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">KTP</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Tanda Pelunasan PIPIL Pajak</li>
+                <li>KK Fotokopi (Bagi Pemula)</li>
+                <li>KK Asli</li>
+                <li>KTP Asli yang Rusak (Bagi KTP yang Rusak)</li>
+                <li>
+                  Surat Keterangan Kehilangan Kepolisian (Bagi yang KTP Hilang)
+                </li>
+                <li>No. HP Aktif</li>
+                <li>E-mail Aktif</li>
+                <li>Map Kuning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- OSS -->
+        <div class="col-md-4 card-item my-2 oss">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">OSS</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Pelunasan PIPIL Pajak</li>
+                <li>Fotokopi KK</li>
+                <li>No HP WhatsApp (HP dibawa saat daftar OSS)</li>
+                <li>E-mail Aktif</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- SKCK -->
+        <div class="col-md-4 card-item my-2 skck">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-on-title">SKCK</h5>
+              <ul class="text-on-paraf">
+                <li>Pengantar RT</li>
+                <li>Tanda Pelunasan PIPIL Pajak</li>
+                <li>Fotokopi KK</li>
+                <li>Pas Foto Ukuran 4x6 Berwarna 3 Lembar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--start footer -->
+    <div class="footers">
+      <div class="container">
+        <div class="row mx-0">
+          <div class="col-md-12 m-4">
+            <p class="text-15 text-white text-center mb-0 font-weight-300">
+              © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
+              Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end footer -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".filter-buttons .btn").click(function () {
+          var filter = $(this).data("filter");
+
+          $(".filter-buttons .btn").removeClass("active btn-success");
+          $(this).addClass("active btn-success");
+
+          if (filter === "all") {
+            $(".card-item").show();
+          } else {
+            $(".card-item").hide();
+            $("." + filter).show();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
