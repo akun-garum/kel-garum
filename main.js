@@ -1,67 +1,37 @@
-function showImage(src, alt){
+// Fungsi untuk menampilkan gambar pop-up
+function showImage(src, alt) {
     $("#imgPopUp").show();
     $("#srcImgPopUp").attr('src', src);
     $("#captionImgPopUp").html(alt);
 }
 
+// Fungsi untuk menutup gambar pop-up
 function closeImage() {
     $("#imgPopUp").hide();
 }
 
-// Fungsi untuk memuat navbar dari file terpisah
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('/navbar.html') // Sesuaikan path jika navbar.html berada di folder lain
-        .then(response => response.text())
-        .then(data => {
-            const navbarContainer = document.getElementById('navbar-placeholder');
-            if (navbarContainer) {
-                navbarContainer.innerHTML = data;
-
-                // Setelah navbar dimuat, atur kelas 'active' berdasarkan halaman saat ini
-                const currentPath = window.location.pathname;
-                const navLinks = navbarContainer.querySelectorAll('.nav-link, .dropdown-item');
-                navLinks.forEach(link => {
-                    // Cek jika href link cocok dengan bagian akhir dari currentPath
-                    // atau jika itu adalah index.html dan path-nya adalah root
-                    if (link.href && (currentPath.endsWith(link.getAttribute('href')) || 
-                                     (link.getAttribute('href') === 'index.html' && (currentPath === '/' || currentPath.endsWith('/index.html'))))) {
-                        link.classList.add('active');
-                        // Untuk dropdown, tambahkan 'active' ke toggle-nya juga
-                        if (link.classList.contains('dropdown-item')) {
-                            let parentDropdownToggle = link.closest('.dropdown-menu').previousElementSibling;
-                            if (parentDropdownToggle && parentDropdownToggle.classList.contains('dropdown-toggle')) {
-                                parentDropdownToggle.classList.add('active');
-                            }
-                        }
-                    } else {
-                        link.classList.remove('active'); // Pastikan menghapus jika tidak aktif
-                    }
-                });
-
-                 // Inisialisasi kembali dropdown Bootstrap setelah navbar dimuat
-                $('.dropdown-toggle').dropdown();
-            }
-        })
-        .catch(error => console.error('Error loading navbar:', error));
-});
-
+// Fungsi untuk mengarahkan ke URL lain
+function redirectTo(url) {
+    window.location.href = url;
+}
 
 // Variabel dan Fungsi untuk Fitur Aksesibilitas (FAB)
 let fabMenuOpen = false;
-let currentFontSize = 16;
-let currentLetterSpacing = 0;
+let currentFontSize = 16; // Ukuran font dasar
+let currentLetterSpacing = 0; // Jarak antar huruf dasar
 let isInverted = false;
 let isGrayscale = false;
 let isUnderlined = false;
 let isBigCursor = false;
 let isReadingGuide = false;
 
+// Fungsi untuk membuka/menutup menu FAB
 function toggleFabMenu() {
     const fabMenu = document.getElementById('fabMenu');
     const fabMain = document.getElementById('fabMain');
-    
+
     fabMenuOpen = !fabMenuOpen;
-    
+
     if (fabMenuOpen) {
         fabMenu.classList.add('active');
         fabMain.classList.add('active');
@@ -71,8 +41,15 @@ function toggleFabMenu() {
     }
 }
 
+// Fungsi untuk mengubah ukuran font
 function changeFontSize(action) {
-    const body = document.body;
+    const mainContent = document.getElementById('main-content-wrapper'); // Target ke main-content-wrapper
+    if (!mainContent) return;
+
+    // Ambil ukuran font saat ini dari computed style jika belum diatur melalui JS
+    if (mainContent.style.fontSize === '') {
+        currentFontSize = parseFloat(window.getComputedStyle(mainContent).fontSize);
+    }
     
     if (action === 'increase' && currentFontSize < 24) {
         currentFontSize += 2;
@@ -80,69 +57,76 @@ function changeFontSize(action) {
         currentFontSize -= 2;
     }
     
-    body.style.fontSize = currentFontSize + 'px';
+    mainContent.style.fontSize = currentFontSize + 'px';
     updateButtonState();
 }
 
+// Fungsi untuk mengubah jarak antar huruf
 function changeLetterSpacing(action) {
-    const body = document.body;
-    
+    const mainContent = document.getElementById('main-content-wrapper'); // Target ke main-content-wrapper
+    if (!mainContent) return;
+
+    if (mainContent.style.letterSpacing === '') {
+        currentLetterSpacing = parseFloat(window.getComputedStyle(mainContent).letterSpacing || '0');
+    }
+
     if (action === 'increase' && currentLetterSpacing < 5) {
         currentLetterSpacing += 0.5;
     } else if (action === 'decrease' && currentLetterSpacing > -1) {
         currentLetterSpacing -= 0.5;
     }
     
-    body.style.letterSpacing = currentLetterSpacing + 'px';
+    mainContent.style.letterSpacing = currentLetterSpacing + 'px';
     updateButtonState();
 }
 
+// Fungsi untuk membalik warna
 function toggleInvertColors() {
-    const body = document.body;
+    const targetElement = document.getElementById('main-content-wrapper'); // Target ke main-content-wrapper
     const btn = document.getElementById('invertBtn');
-    const fabContainer = document.querySelector('.fab-container');
     
+    if (!targetElement) return; // Pastikan elemen ada
+
     isInverted = !isInverted;
     
     if (isInverted) {
-        body.classList.add('invert-colors');
+        targetElement.classList.add('invert-colors');
         btn.classList.add('active');
+        // Reset grayscale jika aktif
         if (isGrayscale) {
-            toggleGrayscale();
+            toggleGrayscale(); // Ini akan menghapus kelas dari targetElement
         }
     } else {
-        body.classList.remove('invert-colors');
+        targetElement.classList.remove('invert-colors');
         btn.classList.remove('active');
     }
-    
-    // Debugging: Log posisi FAB
-    console.log('FAB Position:', fabContainer.getBoundingClientRect());
 }
 
+// Fungsi untuk mode abu-abu
 function toggleGrayscale() {
-    const body = document.body;
+    const targetElement = document.getElementById('main-content-wrapper'); // Target ke main-content-wrapper
     const btn = document.getElementById('grayscaleBtn');
-    const fabContainer = document.querySelector('.fab-container');
+
+    if (!targetElement) return; // Pastikan elemen ada
     
     isGrayscale = !isGrayscale;
     
     if (isGrayscale) {
-        body.classList.add('grayscale');
+        targetElement.classList.add('grayscale');
         btn.classList.add('active');
+        // Reset invert jika aktif
         if (isInverted) {
-            toggleInvertColors();
+            toggleInvertColors(); // Ini akan menghapus kelas dari targetElement
         }
     } else {
-        body.classList.remove('grayscale');
+        targetElement.classList.remove('grayscale');
         btn.classList.remove('active');
     }
-    
-    // Debugging: Log posisi FAB
-    console.log('FAB Position:', fabContainer.getBoundingClientRect());
 }
 
+// Fungsi untuk menggarisbawahi teks
 function toggleUnderlineText() {
-    const body = document.body;
+    const body = document.body; // Tetap di body, karena underline berlaku global
     const btn = document.getElementById('underlineBtn');
     
     isUnderlined = !isUnderlined;
@@ -156,8 +140,9 @@ function toggleUnderlineText() {
     }
 }
 
+// Fungsi untuk memperbesar kursor
 function toggleBigCursor() {
-    const body = document.body;
+    const body = document.body; // Tetap di body
     const btn = document.getElementById('cursorBtn');
     
     isBigCursor = !isBigCursor;
@@ -171,6 +156,7 @@ function toggleBigCursor() {
     }
 }
 
+// Fungsi untuk alat bantu baca (reading guide)
 function toggleReadingGuide() {
     const guide = document.getElementById('readingGuide');
     const btn = document.getElementById('guideBtn');
@@ -198,14 +184,13 @@ function disableReadingGuide() {
 
 function updateReadingGuide(e) {
     const guide = document.getElementById('readingGuide');
-    // guide.style.width = window.innerWidth + 'px'; // Lebar selalu 100%
-    guide.style.top = e.clientY + 'px';
-    // Latar belakang gradien tidak perlu diubah-ubah di sini jika width tetap 100%
-    // guide.style.background = `linear-gradient(90deg, #3498db ${scrollPercent}%, #2ecc71 100%)`; // Hapus jika tidak diperlukan
+    if (guide) { // Pastikan guide ada sebelum mencoba memanipulasinya
+        guide.style.top = e.clientY + 'px';
+    }
 }
 
+// Visual feedback untuk tombol FAB
 function updateButtonState() {
-    // Visual feedback untuk perubahan yang sudah dilakukan
     const allButtons = document.querySelectorAll('.fab-item');
     allButtons.forEach(btn => {
         if (!btn.classList.contains('active')) {
@@ -217,17 +202,17 @@ function updateButtonState() {
     });
 }
 
-// Close menu when clicking outside
+// Tutup menu FAB saat klik di luar area
 document.addEventListener('click', function(e) {
     const fabContainer = document.querySelector('.fab-container');
+    const fabMain = document.getElementById('fabMain'); // Ambil referensi fabMain
     
-    // Pastikan menu terbuka dan klik bukan di dalam kontainer FAB
-    if (fabMenuOpen && fabContainer && !fabContainer.contains(e.target)) {
+    if (fabMenuOpen && fabContainer && !fabContainer.contains(e.target) && (!fabMain || !fabMain.contains(e.target))) {
         toggleFabMenu();
     }
 });
 
-// Keyboard navigation
+// Navigasi Keyboard
 document.addEventListener('keydown', function(e) {
     if (e.ctrlKey) {
         switch(e.key) {
@@ -252,41 +237,55 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Load FAB HTML (Tambahkan ini di dalam DOMContentLoaded event listener)
+// Inisialisasi DOM - Memuat Navbar dan FAB
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('/fab_accessibility.html')
-    .then(response => response.text())
-    .then(data => {
-        const fabPlaceholder = document.getElementById('fab-placeholder');
-        if (fabPlaceholder) {
-            fabPlaceholder.innerHTML = data;
-            const fabContainer = document.querySelector('.fab-container');
-            if (fabContainer) {
-                // Pastikan FAB langsung di bawah body
-                if (fabContainer.parentElement !== document.body) {
-                    document.body.appendChild(fabContainer);
-                }
+    // Muat Navbar
+    fetch('/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            const navbarContainer = document.getElementById('navbar-placeholder');
+            if (navbarContainer) {
+                navbarContainer.innerHTML = data;
+
+                // Atur kelas 'active' pada navbar
+                const currentPath = window.location.pathname;
+                const navLinks = navbarContainer.querySelectorAll('.nav-link, .dropdown-item');
+                
+                navLinks.forEach(link => {
+                    // Mendapatkan href dari link, yang sekarang sudah absolut (misal: /index.html, /informasi-publik/infografis.html)
+                    const linkHref = new URL(link.href).pathname; // Mengambil hanya pathname dari URL lengkap
+
+                    // Perbandingan path:
+                    if (linkHref === currentPath || (linkHref === '/index.html' && (currentPath === '/' || currentPath.endsWith('/index.html')))) {
+                        link.classList.add('active');
+                        if (link.classList.contains('dropdown-item')) {
+                            let parentDropdownToggle = link.closest('.dropdown-menu').previousElementSibling;
+                            if (parentDropdownToggle && parentDropdownToggle.classList.contains('dropdown-toggle')) {
+                                parentDropdownToggle.classList.add('active');
+                            }
+                        }
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+
+                // Inisialisasi kembali dropdown Bootstrap
+                $('.dropdown-toggle').dropdown();
             }
-            const readingGuideHtml = '<div class="reading-guide" id="readingGuide"></div>';
-            document.body.insertAdjacentHTML('afterbegin', readingGuideHtml);
-        }
-    })
-    .catch(error => console.error('Error loading FAB:', error));
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+
+    // Muat FAB (Floating Action Button)
+    fetch('/fab_accessibility.html')
+        .then(response => response.text())
+        .then(data => {
+            const fabPlaceholder = document.getElementById('fab-placeholder');
+            if (fabPlaceholder) {
+                fabPlaceholder.innerHTML = data;
+                // Reading Guide juga perlu ditempatkan langsung di body karena posisinya fixed
+                const readingGuideHtml = '<div class="reading-guide" id="readingGuide"></div>';
+                document.body.insertAdjacentHTML('afterbegin', readingGuideHtml);
+            }
+        })
+        .catch(error => console.error('Error loading FAB:', error));
 });
-
-
-// Fungsi showImage dan closeImage yang sudah ada
-function showImage(src, alt){
-    $("#imgPopUp").show();
-    $("#srcImgPopUp").attr('src', src);
-    $("#captionImgPopUp").html(alt);
-}
-
-function closeImage() {
-    $("#imgPopUp").hide();
-}
-
-// Fungsi redirectTo yang sudah ada (jika belum ada di main.js, pindahkan dari inline script)
-function redirectTo(url) {
-  window.location.href = url;
-}

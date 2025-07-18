@@ -569,10 +569,7 @@ hr {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 99999 !important;
-    transform: translateZ(0); /* Sudah ada */
-    will-change: transform; /* Sudah ada */
-    pointer-events: auto;
+    z-index: 1000;
 }
 
 .fab-main {
@@ -679,6 +676,14 @@ hr {
 .reading-guide.active {
     display: block; /* Show when active */
     transform: scaleX(1); /* Ensure it's not scaled down */
+}
+
+#main-content-wrapper.invert-colors {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+#main-content-wrapper.grayscale {
+    filter: grayscale(1);
 }
 
 
