@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="max-image-preview:large" />
+
+    <meta name="title" content="Beranda | Kelurahan Garum" />
+    <title>Beranda | Kelurahan Garum</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.blitarkota.go.id/assets/images/blitarkota-256.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700,800,900"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+
+    <style>
+      .card-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+      }
+      .card-layanan {
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .card-layanan:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #088395;
+        color: white;
+      }
+
+      .custom-section-pencarian {
+        background: #f9f9f9;
+        padding: 60px 0;
+      }
+      .custom-section-pencarian h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .custom-section-pencarian p {
+        color: #666;
+        line-height: 1.6;
+      }
+      .custom-section-pencarian img {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .custom-section-pencarian .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: background-color 0.3s ease;
+        margin-bottom: 20px;
+      }
+      .custom-section-pencarian .btn-primary:hover {
+        background-color: #0056b3;
+      }
+    </style>
+
+    <!-- Floating Action Button untuk aksesibilitas -->
+     <div id="fab-placeholder"></div>
+  </head>
+
+
+  <body class="text-left">
+    <div id="navbar-placeholder"></div>
+
+    <!-- carosel -->
+    <div class="mb-4">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide headers-banner"
+        data-ride="carousel"
+        data-interval="60000"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="search-title-content d-none d-md-block">
+              <div class="image">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Lambang_Kabupaten_Blitar.webp/497px-Lambang_Kabupaten_Blitar.webp.png"
+                  alt="Logo"
+                />
+              </div>
+              <div class="text-center">
+                <h1 class="mt-2">KELURAHAN GARUM</h1>
+                <h4>
+                  Kelurahan Garum Sejahtera, Bermanfaat, Gotong Royong Dan
+                  Berkembang
+                </h4>
+              </div>
+            </div>
+            <div>
+              <img
+                class="d-block w-100 carousel-image"
+                src="assets/images/20240715_104844 2 1.webp"
+                alt="First slide"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- carosel end -->
+    <!-- Welcome -->
+    <div class="py-4">
+      <div class="container">
+        <div class="row mx-0 py-4">
+          <div class="col-md-4 col-sm-12">
+            <p class="font-weight-500 text-on-welcome">
+              Selamat Datang di Official Website Kelurahan Garum
+            </p>
+            <p class="text-justify">
+              Selamat datang di portal informasi resmi Kelurahan Garum. Di sini,
+              Anda dapat menemukan berbagai informasi mengenai layanan,
+              fasilitas, dan program-program yang tersedia di kelurahan kami.
+              Kenali lebih dalam komunitas kami, sejarah, budaya, serta berbagai
+              kegiatan yang menjadikan Kelurahan Garum tempat yang unik dan
+              menarik. Jelajahi situs ini untuk mengetahui lebih banyak tentang
+              upaya kami dalam membangun lingkungan yang harmonis dan sejahtera
+              untuk semua warga
+            </p>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <img
+              src="assets/images/hero-welcome-3.jpeg"
+              alt=""
+              class="img-fluid welcome-img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container mt-5 mb-4">
+      <p class="mt-4 mb-4 font-weight-bold text-on-title">
+        Informasi dan layanan
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <img
+            src="assets/images/bg-layanan.jpeg"
+            class="img-fluid welcome-img lg-w-50"
+            alt="Section Image"
+          />
+        </div>
+        <div class="col-md-5">
+          <p class="font-weight-500 text-on-welcome mt-3 mt-lg-0 mt-md-1">
+            Informasi Administrasi
+          </p>
+          <p class="text-justify">
+            Kemudahan dalam Mengurus Dokumen Penting warga Kami di Kelurahan
+            Garum memahami betapa pentingnya dokumen-dokumen administratif dalam
+            kehidupan sehari-hari. Oleh karena itu, kami menyediakan berbagai
+            layanan administrasi untuk membantu warga garum mengurus
+            dokumen-dokumen penting seperti Kartu Tanda Penduduk (KTP), Kartu
+            Keluarga (KK), akta kelahiran, akta kematian, surat pindah, dan
+            berbagai surat keterangan lainnya. Layanan ini dirancang untuk
+            memudahkan warga dalam mengurus kebutuhan administratif sehari-hari.
+            Dengan proses yang cepat dan mudah, pelayanan yang ramah dari staf
+            kami, dalam hal ini kami berharap dapat memberikan pengalaman yang
+            efisien dan nyaman bagi warga. Informasi lengkap dan panduan
+            persyaratan tersedia untuk memastikan warga garum mendapatkan
+            layanan terbaik.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-2 pb-5">
+        <div class="col-md-12">
+          <p class="mt-4 mb-4 font-weight-bold text-on-sub-title">Penduduk</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div
+            class="card card-layanan text-center"
+            onclick="location.href='informasi-publik/administrasi.html'"
+          >
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <h5 class="card-title">Layanan Administrasi</h5>
+              <p class="card-text">Berisi Informasi Persyaratan Administrasi</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div
+            class="card card-layanan text-center"
+            onclick="location.href='informasi-publik/kesehatan.html'"
+          >
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <h5 class="card-title">Layanan Kesehatan</h5>
+              <p class="card-text">Berisi Informasi Tentang Kesehatan</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div
+            class="card card-layanan text-center"
+            onclick="location.href='informasi-publik/pendidikan.html'"
+          >
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="bi bi-book"></i>
+              </div>
+              <h5 class="card-title">Layanan Pendidikan</h5>
+              <p class="card-text">Berisi Informasi Tentang Pendidikan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end info dan layanaan -->
+
+    <!-- Mata Pencarian -->
+    <section class="custom-section-pencarian">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <h2 class="text-on-title">Mata Pencaharian</h2>
+            <p class="text-on-paraf text-justify">
+              Kelurahan Garum kami memiliki beragam mata pencaharian yang
+              menjadi tulang punggung ekonomi masyarakat. Salah satu yang
+              menjadi dari mata pencaharian utama yaitu pertanian Setiap bidang
+              memiliki potensi yang besar untuk dikembangkan dan memberikan
+              kontribusi signifikan bagi kesejahteraan warga.
+            </p>
+            <a href="informasi-publik/mata-pecaharian.html" class="btn btn-primary">Lihat Selengkapnya</a>
+          </div>
+          <div class="col-md-5">
+            <img
+              src="assets/images/pic-pencaharian (5).jpeg"
+              class="img-fluid"
+              alt="Mata Pencaharian"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End MataPencarian -->
+
+    <!-- UMKM -->
+    <!-- Parallax Section -->
+    <section class="parallax-section">
+      <p class="text-on-title">UMKM Kelurahan Garum</p>
+    </section>
+
+    <!-- Facility Cards Section -->
+    <div class="container facility-cards">
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div
+            class="card facility-card"
+            onclick="window.location.href='umkm/umkm-opak-gambir.html';"
+          >
+            <img
+              src="assets/images/opak-gambir.jpeg"
+              class="card-img-top"
+              alt="Opak Gambir Putri Kembar"
+            />
+            <div class="card-body facility-info">
+              <p class="card-title text-on-sub-title">
+                Opak Gambir Putri Kembar
+              </p>
+              <p class="card-tex">Oleh - Oleh</p>
+              <div class="facility-icons">
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div
+            class="card facility-card"
+            onclick="window.location.href='umkm/umkm-pecel-billy.html';"
+          >
+            <img
+              src="assets/images/pecel-billy.jpeg"
+              class="card-img-top"
+              alt="Pasar Tradisional Kecapi"
+            />
+            <div class="card-body facility-info">
+              <p class="card-title text-on-sub-title">Sambel Pecel Billy</p>
+              <p class="card-text">Olahan Khas</p>
+              <div class="facility-icons">
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div
+            class="card facility-card"
+            onclick="window.location.href='umkm/umkm-tahu-bulat-gemilang.html';"
+          >
+            <img
+              src="assets/images/tahu-bulat.webp"
+              class="card-img-top"
+              alt="Tahu Bulat & Sotong Gemilang Group"
+            />
+            <div class="card-body facility-info">
+              <p class="card-title text-on-sub-title">
+                Tahu Bulat & Sotong Gemilang Group
+              </p>
+              <p class="card-text">Makanan</p>
+              <div class="facility-icons">
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-lg-2"></div>
+        <div class="col-md-6 col-lg-4">
+          <div
+            class="card facility-card"
+            onclick="window.location.href='umkm/umkm-batik-eco-print-gondo-arum.html';"
+          >
+            <img
+              src="assets/images/batik.jpeg"
+              class="card-img-top"
+              alt="Batik dan Eco Print Gondo Arum"
+            />
+            <div class="card-body facility-info">
+              <p class="card-title text-on-sub-title">
+                Batik dan Eco Print Gondo Arum
+              </p>
+              <p class="card-text">Pakaian Khas</p>
+              <div class="facility-icons">
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div
+            class="card facility-card"
+            onclick="window.location.href='umkm/umkm-souvenir-pancasona.html';"
+          >
+            <img
+              src="assets/images/IMG-20240720-WA0005.webp"
+              class="card-img-top"
+              alt="Souvenir"
+            />
+            <div class="card-body facility-info">
+              <p class="card-title text-on-sub-title">Souvenir Pancasona</p>
+              <p class="card-text">Souvenir khas</p>
+              <div class="facility-icons">
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+      <a href="umkm.html" class="btn btn-primary btn-view-all">Lihat Semua</a>
+    </div>
+    <!-- End UMKM -->
+
+    <!-- Instagram -->
+    <div class="instagram-feed mt-5 py-5">
+      <div class="line-top">
+        <div class="container">
+          <div class="line-wrap"></div>
+        </div>
+      </div>
+      <div class="py-4">
+        <div class="container">
+          <div class="row mx-0">
+            <div class="col-md-12">
+              <p class="text-center text-on-title">Instagram Kelurahan Garum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-instagram py-3">
+        <div class="container">
+          <div class="row mx-xs-0">
+            <div class="col-md-12 px-xs-0">
+              <div class="iframe-container">
+                <iframe
+                  src="https://www.instagram.com/kelurahangarum/embed/"
+                  frameborder="0"
+                  scrolling="no"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Instagram -->
+
+    <div class="kontak-kami">
+      <div class="container">
+        <div class="row mx-0 my-4">
+          <div class="col-md-12">
+            <p class="text-center text-on-title">Tentang Kami</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-kontak-kami mb-3">
+        <div class="container">
+          <div class="row mx-0">
+            <div class="col-md-6 my-4">
+              <div class="card">
+                <div class="card-body p-5">
+                  <div class="title mb-4">
+                    <p class="font-weight-bold text-on-sub-title">
+                      Portal Kelurahan Garum
+                    </p>
+                  </div>
+                  <div class="row border-card">
+                    <div
+                      class="col-md-2 col-3 d-flex align-items-center justify-content-center"
+                    >
+                      <i class="bi bi-geo-alt alt h2"></i>
+                    </div>
+                    <div class="col-md-10 col-9">
+                      <p class="text-18 mb-0 color-red-theme font-weight-bold">
+                        Lokasi
+                      </p>
+                      <p class="text-14">
+                        W6C8+9W9, Garum, Kec. Garum, Kabupaten Blitar, Jawa
+                        Timur 66182
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 my-4">
+              <div class="card">
+                <div class="card-body">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1975.1097415539662!2d112.21604290447192!3d-8.07908428806613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ecc2fc352d7b%3A0x1efa1b9d818a3766!2zS2FudG9yIEtlcGFsYSBLZWx1cmFoYW4gR2FydW0g6qaP6qak6qeA6qag6qa66qa06qaC6qaP6qa86qal6qat6qaP6qa86qat6qa46qar6qay6qak6qeA6qaS6qar6qa46qap6qeA!5e0!3m2!1sid!2sid!4v1721177565586!5m2!1sid!2sid"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    width="100%"
+                    height="195"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+
+    <!-- Footer Start -->
+
+    <!--start footer -->
+    <div class="footers">
+      <div class="container">
+        <div class="row mx-0">
+          <div class="col-md-12 m-4">
+            <p class="text-15 text-white text-center mb-0 font-weight-300">
+              © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
+              Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end footer -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

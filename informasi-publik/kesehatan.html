@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="max-image-preview:large" />
+
+    <meta name="title" content="Kesehatan | Kelurahan Garum" />
+    <title>Kesehatan | Kelurahan Garum</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.blitarkota.go.id/assets/images/blitarkota-256.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700,800,900"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../main.css" />
+  </head>
+
+  <body class="text-left">
+    <div id="navbar-placeholder"></div>
+    <!-- Content -->
+    <div class="page-header">
+      <div class="overlay text-on-title">Data Kesehatan</div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Kesehatan
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+
+    <div class="container py-5">
+      <p class="text-on-title mb-4">Data Kesehatan</p>
+      <p class="text-on-paraf content-page text-justify">
+        Kelurahan Garum memiliki satu poliklinik, 13 Posyandu, dan satu Balai
+        Kesehatan Ibu dan Anak (BKIA). Poliklinik menyediakan layanan medis
+        dasar, Posyandu fokus pada kesehatan ibu dan anak, sementara BKIA
+        memberikan layanan khusus untuk ibu dan anak, termasuk pemeriksaan
+        kehamilan dan kesehatan anak.
+      </p>
+      <div class="row">
+        <div class="col-md-4 mt-3">
+          <div class="">
+            <img
+              src="../assets/images/kes-pic (1).jpeg"
+              alt="Kesehatan Kel"
+              class="img-fluid image-preview welcome-img"
+              onclick="showImage('../assets/images/kes-pic (1).jpeg', 'Kesehatan Kel Garum')"
+            />
+          </div>
+        </div>
+        <div class="col-md-4 mt-3">
+          <div class="">
+            <img
+              src="../assets/images/kes-pic (2).jpeg"
+              alt="Kesehatan Kel"
+              class="img-fluid image-preview welcome-img"
+              onclick="showImage('../assets/images/kes-pic (2).jpeg', 'Kesehatan Kel Garum')"
+            />
+          </div>
+        </div>
+        <div class="col-md-5 mt-3">
+          <div class="">
+            <img
+              src="../assets/images/kes-pic (3).jpeg"
+              alt="Kesehatan Kel"
+              class="img-fluid image-preview welcome-img"
+              onclick="showImage('../assets/images/kes-pic (3).jpeg', 'Kesehatan Kel Garum')"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="imgPopUp" class="modal-img">
+      <span class="close-img" onclick="closeImage()">&times;</span>
+      <img class="modal-content-img" id="srcImgPopUp" />
+      <div id="captionImgPopUp"></div>
+    </div>
+
+    <!-- End Content -->
+    <!--start footer -->
+    <div class="footers">
+      <div class="container">
+        <div class="row mx-0">
+          <div class="col-md-12 m-4">
+            <p class="text-15 text-white text-center mb-0 font-weight-300">
+              © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
+              Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end footer -->
+
+    <!-- Floating Action Button untuk aksesibilitas -->
+     <div id="fab-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../main.js"></script>
+  </body>
+</html>
