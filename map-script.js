@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     kesehatan: iconRed
   };
 
-  // 5. Siapkan LayerGroup untuk setiap kategori (tambah kategori jika perlu)
+  // 5. Siapkan LayerGroup untuk setiap kategori
   const kategoriLayer = {
     kantor: L.layerGroup(),
     umkm: L.layerGroup(),
@@ -58,86 +58,124 @@ document.addEventListener("DOMContentLoaded", function () {
     kesehatan: L.layerGroup()
   };
 
-  // 6. Data marker sebagai array of object
+  // 6. Data marker sebagai array of object dengan gambar dan link gmaps
   const lokasiTempat = [
     {
       nama: "Kantor Kelurahan Garum",
       kategori: "kantor",
       latlng: [-8.08234, 112.21642],
-      popup: "<b>Kantor Kelurahan Garum</b><br>Garum, Kab. Blitar"
+      gambar: "20240715_104844 2 1.webp",
+      link: "https://maps.app.goo.gl/b13UQ8RYaWdEAZMJ6",
+      deskripsi: "Garum, Kab. Blitar"
     },
     {
       nama: "KPU Kabupaten Blitar",
       kategori: "kantor",
       latlng: [-8.072539031702696, 112.22276516567668],
-      popup: "<b>KPU Kabupaten Blitar</b><br>Kantor Pemerintahan"
+      gambar: "kpu-garum.jpg",
+      link: "https://maps.app.goo.gl/mT9gdUouTQ5QjBkY9",
+      deskripsi: "Kantor Pemerintahan"
     },
     {
       nama: "Tahu Bulat & Sotong Gemilang Group",
       kategori: "umkm",
       latlng: [-8.079154969082998, 112.2181937651181],
-      popup: "<b>Tahu Bulat & Sotong Gemilang Group</b><br>UMKM Makanan - Garum"
+      gambar: "tahu-bulat (1).jpeg",
+      link: "https://maps.app.goo.gl/Ae5FX2rHFGG4wcJq9",
+      deskripsi: "UMKM Makanan - Garum"
     },
     {
       nama: "UMKM Opak Gambir",
       kategori: "umkm",
       latlng: [-8.083778636288686, 112.21664368321554],
-      popup: "<b>UMKM Opak Gambir</b><br>Oleh-oleh Khas Garum"
+      gambar: "opak-gambir.jpeg",
+      link: "https://maps.app.goo.gl/oQTrxms3QxfUZGf59",
+      deskripsi: "Oleh-oleh Khas Garum"
     },
     {
       nama: "UMKM Batik Gondo Arum",
       kategori: "umkm",
       latlng: [-8.082034, 112.217234],
-      popup: "<b>UMKM Batik Gondo Arum</b><br>Batik & Eco Print"
+      gambar: "batik.jpeg",
+      link: "#",
+      deskripsi: "Batik & Eco Print"
     },
     {
       nama: "SDN Garum 1",
       kategori: "pendidikan",
       latlng: [-8.072616654147819, 112.22362112605926],
-      popup: "<b>SDN Garum 1</b><br>Sekolah Dasar"
+      gambar: "sd1.jpg",
+      link: "https://maps.app.goo.gl/mh74wJT6aD1dhRKu9",
+      deskripsi: "Sekolah Dasar"
     },
     {
       nama: "SDN Garum 3",
       kategori: "pendidikan",
       latlng: [-8.085240780389205, 112.21403084404552],
-      popup: "<b>SDN Garum 3</b><br>Sekolah Dasar"
+      gambar: "sd3.jpg",
+      link: "https://maps.app.goo.gl/ViL8biUSAVvGP7NS9",
+      deskripsi: "Sekolah Dasar"
     },
     {
       nama: "Seminari Menengah St. Vincentius a Paulo Keuskupan Surabaya",
       kategori: "pendidikan",
       latlng: [-8.07324612649719, 112.22657948593071],
-      popup: "<b>Seminari Menengah St. Vincentius a Paulo</b><br>Pendidikan Agama Katolik"
+      gambar: "seminari.jpg",
+      link: "https://maps.app.goo.gl/xZWNrrzQfvw5UZEE9",
+      deskripsi: "Pendidikan Agama Katolik"
     },
     {
       nama: "Pelatihan Bahasa Jepang Berdikari",
       kategori: "pendidikan",
       latlng: [-8.07597568069372, 112.22348682542798],
-      popup: "<b>Pelatihan Bahasa Jepang Berdikari</b><br>Lembaga Kursus"
+      gambar: "lpk.jpg",
+      link: "https://maps.app.goo.gl/UKidHZkhjPxoXcdG6",
+      deskripsi: "Lembaga Kursus"
     },
     {
       nama: "Lapangan Garum",
       kategori: "faskum",
       latlng: [-8.07955660558394, 112.22026904335047],
-      popup: "<b>Lapangan Garum</b><br>Fasilitas Umum Garum"
+      gambar: "lapangan.jpg",
+      link: "https://maps.app.goo.gl/Yi7Xg3zfJxyzpy1e7",
+      deskripsi: "Fasilitas Umum Garum"
     },
     {
       nama: "Garum Farm",
       kategori: "faskum",
       latlng: [-8.088625382550122, 112.2145223850462],
-      popup: "<b>Garum Farm</b><br>Pertanian & Peternakan"
+      gambar: "garum-farm.jpg",
+      link: "https://maps.app.goo.gl/53KcxSRfZRQrQJt78",
+      deskripsi: "Pertanian & Peternakan"
     },
     {
       nama: "drg. Yosua Nugroho",
       kategori: "kesehatan",
       latlng: [-8.073102492192245, 112.22066827408398],
-      popup: "<b>Klinik drg. Yosua Nugroho</b><br>Praktek Dokter Gigi"
+      gambar: "drg.jpg",
+      link: "https://maps.app.goo.gl/ZWGYGNErjQDdpSZB6",
+      deskripsi: "Praktek Dokter Gigi"
     }
   ];
 
   // 7. Tambahkan semua marker ke LayerGroup sesuai kategori & icon
   lokasiTempat.forEach((tempat) => {
     const icon = iconKategori[tempat.kategori] || iconBlue; // fallback biru
-    const marker = L.marker(tempat.latlng, {icon: icon}).bindPopup(tempat.popup);
+    // HTML popup: gambar, nama (link), deskripsi
+    const popupContent = `
+      <div style="text-align:center;min-width:170px;max-width:200px">
+        <img src="assets/images/${tempat.gambar}" alt="${tempat.nama}" style="width:88px;height:65px;object-fit:cover;border-radius:8px;margin-bottom:7px;box-shadow:0 2px 8px rgba(34,139,230,0.13)">
+        <div style="margin:0.3em 0 0.1em 0;">
+          <a href="${tempat.link}" target="_blank" style="color:#088395;font-weight:600;text-decoration:none;font-size:1.03rem">
+            ${tempat.nama}
+          </a>
+        </div>
+        <div style="color:#0c4a6e;font-size:0.96rem;">
+          ${tempat.deskripsi || ""}
+        </div>
+      </div>
+    `;
+    const marker = L.marker(tempat.latlng, {icon: icon}).bindPopup(popupContent);
     if (kategoriLayer[tempat.kategori]) {
       kategoriLayer[tempat.kategori].addLayer(marker);
     }

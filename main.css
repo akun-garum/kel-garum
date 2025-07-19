@@ -474,6 +474,13 @@ hr {
   font-size: 14px;
   color: #666;
 }
+.leaflet-popup-content a:hover {
+  color: #0ea5e9 !important;
+  text-decoration: underline !important;
+  font-weight: 700;
+  transition: color 0.12s;
+}
+
 
 /* ==== */
 
