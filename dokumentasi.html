@@ -57,127 +57,129 @@
 
   <body class="text-left">
     <div id="navbar-placeholder"></div>
-    <!-- Content -->
-
-    <!-- Sejarah -->
-    <div class="page-header">
-      <div class="overlay text-on-title">Dokumentasi</div>
-    </div>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-container">
-      <div class="container">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Dokumentasi
-            </li>
-          </ol>
-        </nav>
+    <div id="main-content-wrapper">
+      <!-- Content -->
+  
+      <!-- Sejarah -->
+      <div class="page-header">
+        <div class="overlay text-on-title">Dokumentasi</div>
       </div>
-    </div>
-
-    <!-- Content Section -->
-    <div class="container album-container">
-      <div class="row content-page mx-1">
-        <!-- Album Item 1 -->
-
-        <div class="col-md-4">
-          <div class="album-item">
-            <img
-              src="assets/images/koor-lpmk.jpeg"
-              alt="rapat lpmk"
-              class="img-fluid"
-              onclick="showImage('assets/images/koor-lpmk.jpeg', 'Rapat Dokumentasi LPMK')"
-            />
-            <div class="card-body">
-              <h5 class="text-on-title">Rapat Koordinasi Kelurahan & LPMK</h5>
-              <p class="text-on-paraf">
-                Rapat Koordinasi Kelurahan & LPMK merupakan acara rutin yang
-                bertujuan untuk menyelaraskan program kerja antara kelurahan dan
-                LPMK. Acara...
-                <span
-                  class="see-more"
-                  onclick="redirectTo('dokumentasi/acara-rapat-lpmk.html')"
-                  >Lihat Selengkapnya</span
-                >
+  
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-container">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Dokumentasi
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+  
+      <!-- Content Section -->
+      <div class="container album-container">
+        <div class="row content-page mx-1">
+          <!-- Album Item 1 -->
+  
+          <div class="col-md-4">
+            <div class="album-item">
+              <img
+                src="assets/images/koor-lpmk.jpeg"
+                alt="rapat lpmk"
+                class="img-fluid"
+                onclick="showImage('assets/images/koor-lpmk.jpeg', 'Rapat Dokumentasi LPMK')"
+              />
+              <div class="card-body">
+                <h5 class="text-on-title">Rapat Koordinasi Kelurahan & LPMK</h5>
+                <p class="text-on-paraf">
+                  Rapat Koordinasi Kelurahan & LPMK merupakan acara rutin yang
+                  bertujuan untuk menyelaraskan program kerja antara kelurahan dan
+                  LPMK. Acara...
+                  <span
+                    class="see-more"
+                    onclick="redirectTo('dokumentasi/acara-rapat-lpmk.html')"
+                    >Lihat Selengkapnya</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Album Item 2 -->
+          <div class="col-md-4">
+            <div class="album-item">
+              <img
+                src="assets/images/rapat-rt-rw4.jpeg"
+                alt="rapat rt & rw"
+                class="img-fluid"
+                onclick="showImage('assets/images/rapat-rt-rw4.jpeg', 'Rapat Dokumentasi RT & RW')"
+              />
+              <div class="card-body">
+                <h5 class="text-on-title">Rapat Koordinasi RT & RW</h5>
+                <p class="text-on-paraf">
+                  Rapat Koordinasi RT & RW adalah forum strategis yang bertujuan
+                  untuk memperkuat kerjasama antara ketua RT dan RW. Dalam rapat
+                  ini, berbagai isu penting dibahas...
+                  <span
+                    class="see-more"
+                    onclick="redirectTo('dokumentasi/acara-rapat-rw.html')"
+                    >Lihat Selengkapnya</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-4">
+            <div class="album-item">
+              <img
+                src="assets/images/bersih-desa.jpeg"
+                alt="rapat bersih desa"
+                class="img-fluid"
+                onclick="showImage('assets/images/bersih-desa.jpeg', 'Dokumentasi Acara Bersih Desa')"
+              />
+              <div class="card-body">
+                <h5 class="text-on-title">Acara Bersih Desa</h5>
+                <p class="text-on-paraf">
+                  Acara Bersih Desa adalah kegiatan gotong royong yang melibatkan
+                  seluruh warga untuk membersihkan dan memperindah lingkungan
+                  desa. Acara ini bertujuan...
+                  <span
+                    class="see-more"
+                    onclick="redirectTo('dokumentasi/acara-bersih-desa.html')"
+                    >Lihat Selengkapnya</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div id="imgPopUp" class="modal-img">
+        <span class="close-img" onclick="closeImage()">&times;</span>
+        <img class="modal-content-img" id="srcImgPopUp" />
+        <div id="captionImgPopUp"></div>
+      </div>
+  
+      <!--start footer -->
+      <div class="footers">
+        <div class="container">
+          <div class="row mx-0">
+            <div class="col-md-12 m-4">
+              <p class="text-15 text-white text-center mb-0 font-weight-300">
+                © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
+                Reserved
               </p>
             </div>
           </div>
         </div>
-
-        <!-- Album Item 2 -->
-        <div class="col-md-4">
-          <div class="album-item">
-            <img
-              src="assets/images/rapat-rt-rw4.jpeg"
-              alt="rapat rt & rw"
-              class="img-fluid"
-              onclick="showImage('assets/images/rapat-rt-rw4.jpeg', 'Rapat Dokumentasi RT & RW')"
-            />
-            <div class="card-body">
-              <h5 class="text-on-title">Rapat Koordinasi RT & RW</h5>
-              <p class="text-on-paraf">
-                Rapat Koordinasi RT & RW adalah forum strategis yang bertujuan
-                untuk memperkuat kerjasama antara ketua RT dan RW. Dalam rapat
-                ini, berbagai isu penting dibahas...
-                <span
-                  class="see-more"
-                  onclick="redirectTo('dokumentasi/acara-rapat-rw.html')"
-                  >Lihat Selengkapnya</span
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="album-item">
-            <img
-              src="assets/images/bersih-desa.jpeg"
-              alt="rapat bersih desa"
-              class="img-fluid"
-              onclick="showImage('assets/images/bersih-desa.jpeg', 'Dokumentasi Acara Bersih Desa')"
-            />
-            <div class="card-body">
-              <h5 class="text-on-title">Acara Bersih Desa</h5>
-              <p class="text-on-paraf">
-                Acara Bersih Desa adalah kegiatan gotong royong yang melibatkan
-                seluruh warga untuk membersihkan dan memperindah lingkungan
-                desa. Acara ini bertujuan...
-                <span
-                  class="see-more"
-                  onclick="redirectTo('dokumentasi/acara-bersih-desa.html')"
-                  >Lihat Selengkapnya</span
-                >
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
+      <!--end footer -->
     </div>
-
-    <div id="imgPopUp" class="modal-img">
-      <span class="close-img" onclick="closeImage()">&times;</span>
-      <img class="modal-content-img" id="srcImgPopUp" />
-      <div id="captionImgPopUp"></div>
-    </div>
-
-    <!--start footer -->
-    <div class="footers">
-      <div class="container">
-        <div class="row mx-0">
-          <div class="col-md-12 m-4">
-            <p class="text-15 text-white text-center mb-0 font-weight-300">
-              © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
-              Reserved
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--end footer -->
 
     <!-- Floating Action Button untuk aksesibilitas -->
      <div id="fab-placeholder"></div>

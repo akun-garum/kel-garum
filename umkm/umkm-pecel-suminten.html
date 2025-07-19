@@ -57,97 +57,99 @@
 
   <body class="text-left">
     <div id="navbar-placeholder"></div>
-    <!-- Content -->
-    <div class="page-header">
-      <div class="overlay text-on-title text-center">
-        UMKM | Sambel Pecel Mbak Minten
+    <div id="main-content-wrapper">
+      <!-- Content -->
+      <div class="page-header">
+        <div class="overlay text-on-title text-center">
+          UMKM | Sambel Pecel Mbak Minten
+        </div>
       </div>
-    </div>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-container">
-      <div class="container">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="../umkm.html">UMKM</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Sambel Pecel Mbak Minten
-            </li>
-          </ol>
-        </nav>
+  
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-container">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="../umkm.html">UMKM</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Sambel Pecel Mbak Minten
+              </li>
+            </ol>
+          </nav>
+        </div>
       </div>
-    </div>
-
-    <!-- Content Section -->
-
-    <div class="container py-5">
-      <p class="text-on-title mb-4">Sambel Pecel Mbak Minten</p>
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <div class="image-umkm">
-            <img
-              src="../assets/images/pic-pecel-suminten.jpeg"
-              alt="Souvenir"
-              class="img-fluid welcome-img"
-            />
+  
+      <!-- Content Section -->
+  
+      <div class="container py-5">
+        <p class="text-on-title mb-4">Sambel Pecel Mbak Minten</p>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="image-umkm">
+              <img
+                src="../assets/images/pic-pecel-suminten.jpeg"
+                alt="Souvenir"
+                class="img-fluid welcome-img"
+              />
+            </div>
+          </div>
+        </div>
+        <p class="text-on-paraf content-page text-justify">
+          <strong>Sambel Pecel Mbak Minten </strong>, adalah sambal khas yang
+          menggugah selera dengan cita rasa autentik dari bahan-bahan pilihan.
+          Dihidangkan dengan bumbu kacang yang kental dan pedas, sambel pecel ini
+          cocok untuk menemani berbagai hidangan. Cocok untuk pecinta kuliner
+          tradisional yang mencari kenikmatan rasa khas Nusantara.
+        </p>
+        <div class="row">
+          <div class="col-md-4 mt-3">
+            <div class="">
+              <img
+                src="../assets/images/pic-pecel-suminten-1.jpeg"
+                alt="Sambel Pecel Mbak Minten"
+                class="img-fluid image-preview welcome-img"
+                onclick="showImage('../assets/images/pic-pecel-suminten-1.jpeg', 'Sambel Pecel Mbak Minten')"
+              />
+            </div>
+          </div>
+          <div class="col-md-5 mt-3">
+            <div class="">
+              <img
+                src="../assets/images/pic-pecel-suminten-2 1.png"
+                alt="Sambel Pecel Mbak Minten"
+                class="img-fluid image-preview welcome-img"
+                onclick="showImage('../assets/images/pic-pecel-suminten-2 1.png', 'Sambel Pecel Mbak Minten')"
+              />
+            </div>
+          </div>
+         
+  
+        </div>
+      </div>
+  
+      <div id="imgPopUp" class="modal-img">
+        <span class="close-img" onclick="closeImage()">&times;</span>
+        <img class="modal-content-img" id="srcImgPopUp" />
+        <div id="captionImgPopUp"></div>
+      </div>
+  
+      <!-- End Content -->
+      <!--start footer -->
+      <div class="footers">
+        <div class="container">
+          <div class="row mx-0">
+            <div class="col-md-12 m-4">
+              <p class="text-15 text-white text-center mb-0 font-weight-300">
+                © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
+                Reserved
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <p class="text-on-paraf content-page text-justify">
-        <strong>Sambel Pecel Mbak Minten </strong>, adalah sambal khas yang
-        menggugah selera dengan cita rasa autentik dari bahan-bahan pilihan.
-        Dihidangkan dengan bumbu kacang yang kental dan pedas, sambel pecel ini
-        cocok untuk menemani berbagai hidangan. Cocok untuk pecinta kuliner
-        tradisional yang mencari kenikmatan rasa khas Nusantara.
-      </p>
-      <div class="row">
-        <div class="col-md-4 mt-3">
-          <div class="">
-            <img
-              src="../assets/images/pic-pecel-suminten-1.jpeg"
-              alt="Sambel Pecel Mbak Minten"
-              class="img-fluid image-preview welcome-img"
-              onclick="showImage('../assets/images/pic-pecel-suminten-1.jpeg', 'Sambel Pecel Mbak Minten')"
-            />
-          </div>
-        </div>
-        <div class="col-md-5 mt-3">
-          <div class="">
-            <img
-              src="../assets/images/pic-pecel-suminten-2 1.png"
-              alt="Sambel Pecel Mbak Minten"
-              class="img-fluid image-preview welcome-img"
-              onclick="showImage('../assets/images/pic-pecel-suminten-2 1.png', 'Sambel Pecel Mbak Minten')"
-            />
-          </div>
-        </div>
-       
-
-      </div>
+      <!--end footer -->
     </div>
-
-    <div id="imgPopUp" class="modal-img">
-      <span class="close-img" onclick="closeImage()">&times;</span>
-      <img class="modal-content-img" id="srcImgPopUp" />
-      <div id="captionImgPopUp"></div>
-    </div>
-
-    <!-- End Content -->
-    <!--start footer -->
-    <div class="footers">
-      <div class="container">
-        <div class="row mx-0">
-          <div class="col-md-12 m-4">
-            <p class="text-15 text-white text-center mb-0 font-weight-300">
-              © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
-              Reserved
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--end footer -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
