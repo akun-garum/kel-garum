@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta name="title" content="Bantuan / FAQ | Kelurahan Garum" />
+    <title>Bantuan / FAQ | Kelurahan Garum</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://www.blitarkota.go.id/assets/images/blitarkota-256.png" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700,800,900" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700,800,900" rel="stylesheet"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="main.css" />
+
+    <style>
+      .faq-header {
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: #088395;
+        text-align: left;
+        margin-bottom: 8px;
+      }
+      .faq-subtitle {
+        font-size: 1.1rem;
+        color: #363636;
+        margin-bottom: 32px;
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+      }
+      .faq-card {
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 18px rgba(8,131,149,0.05);
+        margin-bottom: 20px;
+        transition: box-shadow .2s;
+      }
+      .faq-card.active,
+      .faq-card:hover {
+        box-shadow: 0 8px 30px rgba(8,131,149,0.12);
+        border-color: #a0e2f6;
+      }
+      .faq-question {
+        cursor: pointer;
+        padding: 18px 28px;
+        background: #f6fcff;
+        border-radius: 16px 16px 0 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-card:hover .faq-question,
+        .faq-card.active .faq-question {
+        background: #088395 !important;
+        color: #fff !important;
+        }
+        .faq-card:hover .faq-question .faq-icon,
+        .faq-card.active .faq-question .faq-icon {
+        color: #fff !important;
+        }
+        .faq-card .faq-question {
+        transition: background 0.18s, color 0.16s;
+        }
+      .faq-answer {
+        display: none;
+        padding: 0 28px 22px 28px;
+        font-size: 1.03rem;
+        color: #0c4a6e;
+        border-top: 1px solid #e2e8f0;
+        background: #fff;
+        border-radius: 0 0 16px 16px;
+      }
+      .faq-card.active .faq-answer {
+        display: block;
+        animation: fadein .3s;
+      }
+      .faq-icon {
+        color: #088395;
+        font-size: 1.3rem;
+        margin-left: 8px;
+        transition: transform .2s;
+      }
+      .faq-card.active .faq-icon {
+        transform: rotate(180deg);
+      }
+      .faq-search-box {
+        position: relative;
+        max-width: 420px;
+        margin-bottom: 36px;
+      }
+      .faq-search-input {
+        border-radius: 22px;
+        padding: 11px 44px 11px 20px;
+        font-size: 1.04rem;
+        border: 1px solid #b2d7e9;
+        background: #f6fcff;
+        box-shadow: none;
+        outline: none;
+      }
+      .faq-search-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #0ea5e9;
+        font-size: 1.15rem;
+      }
+      @media (max-width: 768px) {
+        .faq-question { font-size: 1rem; padding: 14px 14px; }
+        .faq-answer { font-size: .97rem; padding: 0 14px 16px 14px; }
+        .faq-header { font-size: 1.45rem; }
+      }
+    </style>
+  </head>
+
+  <body class="text-left">
+    <div id="navbar-placeholder"></div>
+    <div id="main-content-wrapper">
+      <div class="page-header">
+        <div class="overlay text-on-title">FAQ / Bantuan</div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-container">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="container py-5">
+        <div class="faq-header mb-2">Pertanyaan Umum (FAQ)</div>
+        <div class="faq-subtitle">
+          Temukan jawaban atas pertanyaan seputar layanan, UMKM, dan fitur website Kelurahan Garum.
+        </div>
+        <div class="faq-search-box mb-4">
+          <input type="text" class="faq-search-input" id="faqSearchInput" placeholder="Cari pertanyaan ...">
+          <span class="faq-search-icon"><i class="fas fa-search"></i></span>
+        </div>
+        <div id="faq-list" class="mt-3">
+
+          <!-- FAQ Item 1 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Apa saja informasi yang bisa saya temukan di website Kelurahan Garum?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Website Kelurahan Garum menyajikan informasi tentang profil kelurahan, data UMKM, layanan administrasi, jadwal kegiatan desa, fasilitas umum, pendidikan, peta interaktif, hingga kontak resmi kelurahan.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Bagaimana cara menggunakan fitur peta interaktif?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Di halaman utama, klik ikon lokasi pada peta interaktif untuk melihat detail setiap titik penting seperti kantor kelurahan, UMKM, sekolah, fasilitas umum, dan layanan kesehatan. Anda juga dapat memfilter kategori lokasi sesuai kebutuhan.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Apakah website ini bisa diakses dari HP?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Tentu, website Kelurahan Garum sudah responsif sehingga nyaman diakses melalui ponsel maupun komputer.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Bagaimana cara melihat daftar UMKM dan produk lokal di Garum?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Daftar lengkap UMKM dapat dilihat di menu <b>UMKM</b>. Setiap profil UMKM menampilkan deskripsi usaha, produk, alamat, serta kontak yang bisa dihubungi.
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Bagaimana cara mendaftarkan UMKM baru di website ini?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Silakan datang ke kantor kelurahan atau hubungi admin web (KKN Garum) untuk proses pendaftaran UMKM baru. Data usaha akan diverifikasi sebelum ditampilkan di website.
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Di mana saya bisa melihat data RT/RW atau statistik desa?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Informasi detail tentang RT/RW, data kependudukan, dan statistik desa tersedia di menu <b>Informasi Publik->infografis</b> pada website ini.
+            </div>
+          </div>
+
+          <!-- FAQ Item 7 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Bagaimana mengurus surat pengantar atau administrasi di kelurahan?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Datang ke kantor kelurahan pada jam kerja dengan membawa dokumen persyaratan. Alur pelayanan dan berkas yang dibutuhkan dapat dilihat di halaman <b>Administrasi</b> website.
+            </div>
+          </div>
+
+          <!-- FAQ Item 8 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Bagaimana cara menghubungi kantor kelurahan atau admin web?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Nomor telepon, alamat email, dan jam operasional kantor tertera di halaman kontak. Anda juga bisa menggunakan menu <b>Bantuan</b> ini untuk melihat FAQ.
+            </div>
+          </div>
+
+          <!-- FAQ Item 9 -->
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Saya masih bingung atau belum menemukan jawaban di sini, harus bagaimana?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              Silakan datang ke kantor kelurahan Garum pada jam kerja, atau hubungi kontak yang tersedia di website. Tim kami siap membantu!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footers">
+        <div class="container">
+          <div class="row mx-0">
+            <div class="col-md-12 m-4">
+              <p class="text-15 text-white text-center mb-0 font-weight-300">
+                © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights Reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Floating Action Button untuk aksesibilitas -->
+    <div id="fab-placeholder"></div>
+
+    <!-- Script: Navbar dan FAQ logic -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      // Accordion FAQ logic
+      document.querySelectorAll('.faq-question').forEach(el => {
+        el.addEventListener('click', function() {
+          const card = this.closest('.faq-card');
+          if (card.classList.contains('active')) {
+            card.classList.remove('active');
+          } else {
+            document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+          }
+        });
+      });
+
+      // Search FAQ
+      document.getElementById('faqSearchInput').addEventListener('input', function() {
+        const search = this.value.toLowerCase();
+        document.querySelectorAll('.faq-card').forEach(card => {
+          const q = card.querySelector('.faq-question span').textContent.toLowerCase();
+          const a = card.querySelector('.faq-answer').textContent.toLowerCase();
+          if (q.includes(search) || a.includes(search)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
