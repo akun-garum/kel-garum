@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       nama: "SDN Garum 3",
       kategori: "pendidikan",
       latlng: [-8.085240780389205, 112.21403084404552],
-      gambar: "sd3.jpg",
+      gambar: "sd3.jpg", // pppp
       link: "https://maps.app.goo.gl/ViL8biUSAVvGP7NS9",
       deskripsi: "Sekolah Dasar"
     },
