@@ -36,7 +36,6 @@
         
         /* Gaya latar belakang untuk seluruh halaman infografis (bukan di body langsung) */
         .infografis-page-bg {
-             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
              padding-bottom: 50px; /* Agar ada ruang di bawah */
         }
 
@@ -246,19 +245,19 @@
                 <div class="content-infografis">
                     <div class="stats-summary">
                         <div class="summary-card">
-                            <div class="summary-number" id="totalPenduduk">1,247</div>
+                            <div class="summary-number" id="totalPenduduk">6073</div>
                             <div class="summary-label">Total Penduduk</div>
                         </div>
                         <div class="summary-card male">
-                            <div class="summary-number" id="lakiLaki">642</div>
+                            <div class="summary-number" id="lakiLaki">3123</div>
                             <div class="summary-label">Laki-Laki</div>
                         </div>
                         <div class="summary-card female">
-                            <div class="summary-number" id="perempuan">605</div>
+                            <div class="summary-number" id="perempuan">2950</div>
                             <div class="summary-label">Perempuan</div>
                         </div>
                         <div class="summary-card family">
-                            <div class="summary-number" id="keluarga">324</div>
+                            <div class="summary-number" id="keluarga">2154</div>
                             <div class="summary-label">Kepala Keluarga</div>
                         </div>
                     </div>
@@ -317,7 +316,7 @@
                         <div class="chart-container full-width">
                             <h3 class="chart-title">
                                 <i class="fas fa-heart"></i>
-                                Status Perkawinan
+                                Kesejahteraan Keluarga
                             </h3>
                             <div class="chart-wrapper">
                                 <canvas id="maritalChart"></canvas>
@@ -331,8 +330,8 @@
                             <p>106 : 100 (L:P)</p>
                         </div>
                         <div class="info-card">
-                            <h3><i class="fas fa-baby"></i> Tingkat Kelahiran</h3>
-                            <p>15 per 1000 penduduk</p>
+                            <h3><i class="fas fa-chart-line"></i> Perkembangan Penduduk</h3>
+                            <p id="perkembanganPenduduk"></p>
                         </div>
                         <div class="info-card">
                             <h3><i class="fas fa-chart-line"></i> Pertumbuhan Penduduk</h3>
@@ -372,239 +371,205 @@
     <script src="../main.js"></script>
 
     <script>
-        // Data untuk charts
-        const chartData = {
-            gender: {
-                labels: ['Laki-Laki', 'Perempuan'],
-                data: [642, 605],
-                colors: ['#3498db', '#e74c3c']
-            },
-            age: {
-                labels: ['0-9 tahun', '10-19 tahun', '20-29 tahun', '30-39 tahun', '40-49 tahun', '50-59 tahun', '60+ tahun'],
-                data: [187, 203, 245, 198, 156, 143, 115],
-                colors: ['#ff6b6b', '#feca57', '#48cae4', '#06d6a0', '#8338ec', '#fb8500', '#d62246']
-            },
-            education: {
-                labels: ['Tidak Sekolah', 'SD', 'SMP', 'SMA/SMK', 'D1/D2/D3', 'S1', 'S2/S3'],
-                data: [89, 325, 278, 342, 87, 98, 28],
-                colors: ['#ff7675', '#fd79a8', '#fdcb6e', '#6c5ce7', '#a29bfe', '#00b894', '#00cec9']
-            },
-            occupation: {
-                labels: ['Petani', 'Buruh', 'Wiraswasta', 'PNS', 'TNI/Polri', 'Guru', 'Lainnya'],
-                data: [412, 287, 156, 89, 23, 67, 213],
-                colors: ['#2ecc71', '#e67e22', '#f39c12', '#9b59b6', '#34495e', '#3498db', '#95a5a6']
-            },
-            religion: {
-                labels: ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha'],
-                data: [1089, 98, 34, 18, 8],
-                colors: ['#27ae60', '#3498db', '#e74c3c', '#f39c12', '#9b59b6']
-            },
-            marital: {
-                labels: ['Belum Menikah', 'Menikah', 'Cerai Hidup', 'Cerai Mati'],
-                data: [387, 723, 43, 94],
-                colors: ['#3498db', '#27ae60', '#e74c3c', '#95a5a6']
-            }
-        };
-
-        // Chart options
-        const chartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        padding: 20,
-                        usePointStyle: true,
-                        font: {
-                            size: 12
-                        }
-                    }
-                }
-            }
-        };
-
-        // Create Gender Chart (Doughnut)
-        const genderCtx = document.getElementById('genderChart').getContext('2d');
-        new Chart(genderCtx, {
-            type: 'doughnut',
-            data: {
-                labels: chartData.gender.labels,
-                datasets: [{
-                    data: chartData.gender.data,
-                    backgroundColor: chartData.gender.colors,
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
-            options: {
-                ...chartOptions,
-                cutout: '60%',
-                plugins: {
-                    ...chartOptions.plugins,
-                    legend: {
-                        ...chartOptions.plugins.legend,
-                        display: true
-                    }
-                }
-            }
-        });
-
-        // Create Age Chart (Bar)
-        const ageCtx = document.getElementById('ageChart').getContext('2d');
-        new Chart(ageCtx, {
-            type: 'bar',
-            data: {
-                labels: chartData.age.labels,
-                datasets: [{
-                    label: 'Jumlah Penduduk',
-                    data: chartData.age.data,
-                    backgroundColor: chartData.age.colors,
-                    borderRadius: 5
-                }]
-            },
-            options: {
-                ...chartOptions,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            font: {
-                                size: 11
-                            }
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            font: {
-                                size: 10
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        // Create Education Chart (Horizontal Bar)
-        const educationCtx = document.getElementById('educationChart').getContext('2d');
-        new Chart(educationCtx, {
-            type: 'bar',
-            data: {
-                labels: chartData.education.labels,
-                datasets: [{
-                    label: 'Jumlah Penduduk',
-                    data: chartData.education.data,
-                    backgroundColor: chartData.education.colors,
-                    borderRadius: 5
-                }]
-            },
-            options: {
-                ...chartOptions,
-                indexAxis: 'y',
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // Create Occupation Chart (Pie)
-        const occupationCtx = document.getElementById('occupationChart').getContext('2d');
-        new Chart(occupationCtx, {
-            type: 'pie',
-            data: {
-                labels: chartData.occupation.labels,
-                datasets: [{
-                    data: chartData.occupation.data,
-                    backgroundColor: chartData.occupation.colors,
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
-            options: chartOptions
-        });
-
-        // Create Religion Chart (Doughnut)
-        const religionCtx = document.getElementById('religionChart').getContext('2d');
-        new Chart(religionCtx, {
-            type: 'doughnut',
-            data: {
-                labels: chartData.religion.labels,
-                datasets: [{
-                    data: chartData.religion.data,
-                    backgroundColor: chartData.religion.colors,
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
-            options: {
-                ...chartOptions,
-                cutout: '50%'
-            }
-        });
-
-        // Create Marital Status Chart (Bar)
-        const maritalCtx = document.getElementById('maritalChart').getContext('2d');
-        new Chart(maritalCtx, {
-            type: 'bar',
-            data: {
-                labels: chartData.marital.labels,
-                datasets: [{
-                    label: 'Jumlah Penduduk',
-                    data: chartData.marital.data,
-                    backgroundColor: chartData.marital.colors,
-                    borderRadius: 8
-                }]
-            },
-            options: {
-                ...chartOptions,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // Counter animation for summary cards
-        function animateCounters() {
-            const counters = document.querySelectorAll('.summary-number');
-            counters.forEach(counter => {
-                const target = parseInt(counter.textContent.replace(/,/g, ''));
-                let current = 0;
-                const increment = target / 100;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        counter.textContent = target.toLocaleString('id-ID');
-                        clearInterval(timer);
-                    } else {
-                        counter.textContent = Math.floor(current).toLocaleString('id-ID');
-                    }
-                }, 20);
-            });
+    // Data untuk charts + tambahan untuk perhitungan otomatis
+    const chartData = {
+        gender: {
+            labels: ['Laki-Laki', 'Perempuan'],
+            data: [3123, 2950],
+            colors: ['#3498db', '#e74c3c']
+        },
+        age: {
+            labels: ['0-9 tahun', '10-19 tahun', '20-29 tahun', '30-39 tahun', '40-49 tahun', '50-59 tahun', '60+ tahun'],
+            data: [672, 945, 914, 722, 949, 886, 1034],
+            colors: ['#ff6b6b', '#feca57', '#48cae4', '#06d6a0', '#8338ec', '#fb8500', '#d62246']
+        },
+        education: {
+            labels: ['Tidak Sekolah', 'SD', 'SMP', 'SMA/SMK', 'D1/D2/D3', 'S1', 'S2/S3'],
+            data: [0, 1290, 1269, 1342, 85, 210, 15],
+            colors: ['#ff7675', '#fd79a8', '#fdcb6e', '#6c5ce7', '#a29bfe', '#00b894', '#00cec9']
+        },
+        occupation: {
+            labels: ['Petani', 'Buruh', 'Wiraswasta', 'PNS', 'TNI/Polri', 'Guru', 'Lainnya'],
+            data: [440, 641, 315, 67, 14, 49, 4056],
+            colors: ['#2ecc71', '#e67e22', '#f39c12', '#9b59b6', '#34495e', '#3498db', '#95a5a6']
+        },
+        religion: {
+            labels: ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu'],
+            data: [5920, 41, 107, 5, 0, 0],
+            colors: ['#27ae60', '#3498db', '#e74c3c', '#f39c12', '#9b59b6', '#8e44ad']
+        },
+        marital: {
+            labels: ['Prasejahtera', 'Keluarga Sejahtera 1', 'Keluarga Sejahtera 2', 'Keluarga Sejahtera 3', 'Keluarga Sejahtera 3 Plus'],
+            data: [765, 282, 305, 337, 425],
+            colors: ['#3498db', '#27ae60', '#e67e22', '#9b59b6', '#2c3e50']
+        },
+        extra: {
+            pendudukTahunLalu: 6124          // jumlah penduduk tahun sebelumnya
         }
+    };
 
-        // Initialize animations when page loads
-        window.addEventListener('load', () => {
-            setTimeout(animateCounters, 500);
+    // Chart options
+    const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 20,
+                    usePointStyle: true,
+                    font: { size: 12 }
+                }
+            }
+        }
+    };
+
+    // Gender Chart
+    const genderCtx = document.getElementById('genderChart').getContext('2d');
+    new Chart(genderCtx, {
+        type: 'doughnut',
+        data: {
+            labels: chartData.gender.labels,
+            datasets: [{
+                data: chartData.gender.data,
+                backgroundColor: chartData.gender.colors,
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: { ...chartOptions, cutout: '60%' }
+    });
+
+    // Age Chart
+    const ageCtx = document.getElementById('ageChart').getContext('2d');
+    new Chart(ageCtx, {
+        type: 'bar',
+        data: {
+            labels: chartData.age.labels,
+            datasets: [{
+                label: 'Jumlah Penduduk',
+                data: chartData.age.data,
+                backgroundColor: chartData.age.colors,
+                borderRadius: 5
+            }]
+        },
+        options: { ...chartOptions, plugins: { legend: { display: false } } }
+    });
+
+    // Education Chart
+    const educationCtx = document.getElementById('educationChart').getContext('2d');
+    new Chart(educationCtx, {
+        type: 'bar',
+        data: {
+            labels: chartData.education.labels,
+            datasets: [{
+                label: 'Jumlah Penduduk',
+                data: chartData.education.data,
+                backgroundColor: chartData.education.colors,
+                borderRadius: 5
+            }]
+        },
+        options: { ...chartOptions, indexAxis: 'y', plugins: { legend: { display: false } } }
+    });
+
+    // Occupation Chart
+    const occupationCtx = document.getElementById('occupationChart').getContext('2d');
+    new Chart(occupationCtx, {
+        type: 'pie',
+        data: {
+            labels: chartData.occupation.labels,
+            datasets: [{
+                data: chartData.occupation.data,
+                backgroundColor: chartData.occupation.colors,
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: chartOptions
+    });
+
+    // Religion Chart
+    const religionCtx = document.getElementById('religionChart').getContext('2d');
+    new Chart(religionCtx, {
+        type: 'doughnut',
+        data: {
+            labels: chartData.religion.labels,
+            datasets: [{
+                data: chartData.religion.data,
+                backgroundColor: chartData.religion.colors,
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: { ...chartOptions, cutout: '50%' }
+    });
+
+    // Marital Chart
+    const maritalCtx = document.getElementById('maritalChart').getContext('2d');
+    new Chart(maritalCtx, {
+        type: 'bar',
+        data: {
+            labels: chartData.marital.labels,
+            datasets: [{
+                label: 'Jumlah Penduduk',
+                data: chartData.marital.data,
+                backgroundColor: chartData.marital.colors,
+                borderRadius: 8
+            }]
+        },
+        options: { ...chartOptions, plugins: { legend: { display: false } } }
+    });
+
+    // Counter animation for summary cards
+    function animateCounters() {
+        const counters = document.querySelectorAll('.summary-number');
+        counters.forEach(counter => {
+            const target = parseInt(counter.textContent.replace(/,/g, ''));
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target.toLocaleString('id-ID');
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current).toLocaleString('id-ID');
+                }
+            }, 20);
         });
-    </script>
+    }
+
+    // Hitung & update info-card otomatis
+    // Hitung & update info-card otomatis
+function updateInfoCards() {
+    const laki = chartData.gender.data[0];
+    const perempuan = chartData.gender.data[1];
+    const totalPenduduk = laki + perempuan;
+    const kk = parseInt(document.getElementById('keluarga').textContent.replace(/\./g, ''));
+
+    // Rasio jenis kelamin
+    const rasio = Math.round((laki / perempuan) * 100);
+    document.querySelector('.info-card:nth-child(1) p').textContent = `${rasio} : 100 (L:P)`;
+
+    // Rata-rata anggota keluarga
+    const rataKK = (totalPenduduk / kk).toFixed(1);
+    document.querySelector('.info-card:nth-child(4) p').textContent = `${rataKK} orang per KK`;
+
+    // Perkembangan penduduk (persentase)
+    const perkembangan = (((totalPenduduk - chartData.extra.pendudukTahunLalu) / chartData.extra.pendudukTahunLalu) * 100).toFixed(2);
+    document.querySelector('.info-card:nth-child(2) p').textContent = `${perkembangan}%`;
+
+    // Pertumbuhan penduduk otomatis (tetap ada)
+    const pertumbuhanPenduduk = (((totalPenduduk - chartData.extra.pendudukTahunLalu) / chartData.extra.pendudukTahunLalu) * 100).toFixed(1);
+    document.querySelector('.info-card:nth-child(3) p').textContent = `${pertumbuhanPenduduk}% per tahun`;
+}
+
+
+    // Inisialisasi
+    window.addEventListener('load', () => {
+        setTimeout(animateCounters, 500);
+        updateInfoCards();
+    });
+</script>
 </body>
 </html>
