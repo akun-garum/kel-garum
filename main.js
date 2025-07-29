@@ -61,25 +61,6 @@ function changeFontSize(action) {
     updateButtonState();
 }
 
-// Fungsi untuk mengubah jarak antar huruf
-function changeLetterSpacing(action) {
-    const mainContent = document.getElementById('main-content-wrapper'); // Target ke main-content-wrapper
-    if (!mainContent) return;
-
-    if (mainContent.style.letterSpacing === '') {
-        currentLetterSpacing = parseFloat(window.getComputedStyle(mainContent).letterSpacing || '0');
-    }
-
-    if (action === 'increase' && currentLetterSpacing < 5) {
-        currentLetterSpacing += 0.5;
-    } else if (action === 'decrease' && currentLetterSpacing > -1) {
-        currentLetterSpacing -= 0.5;
-    }
-    
-    mainContent.style.letterSpacing = currentLetterSpacing + 'px';
-    updateButtonState();
-}
-
 // Fungsi untuk membalik warna
 function toggleInvertColors() {
     const targetElement = document.getElementById('main-content-wrapper'); // Target ke main-content-wrapper
