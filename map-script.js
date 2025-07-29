@@ -85,20 +85,20 @@ document.addEventListener("DOMContentLoaded", function () {
       deskripsi: "UMKM Makanan - Garum"
     },
     {
-      nama: "UMKM Opak Gambir",
+      nama: "Ayam Geprek Munthu",
       kategori: "umkm",
-      latlng: [-8.083778636288686, 112.21664368321554],
-      gambar: "opak-gambir.jpeg",
-      link: "https://maps.app.goo.gl/oQTrxms3QxfUZGf59",
-      deskripsi: "Oleh-oleh Khas Garum"
+      latlng: [-8.074322499766751, 112.22205292659521],
+      gambar: "munthu-1.jpg",
+      link: "https://maps.app.goo.gl/cJkY63oh6BrgrE3c7",
+      deskripsi: "Warung Makan Ayam Geprek dan Minuman"
     },
     {
-      nama: "UMKM Batik Gondo Arum",
+      nama: "Warung Wader",
       kategori: "umkm",
-      latlng: [-8.082034, 112.217234],
-      gambar: "batik.jpeg",
-      link: "#",
-      deskripsi: "Batik & Eco Print"
+      latlng: [-8.086293854874288, 112.21542250591637],
+      gambar: "wader-1.jpg",
+      link: "https://maps.app.goo.gl/59LPrKf32FLGmmiz9",
+      deskripsi: "Warung Makan Wader"
     },
     {
       nama: "SDN Garum 1",
@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", function () {
       deskripsi: "Fasilitas Umum Garum"
     },
     {
-      nama: "Garum Farm",
-      kategori: "faskum",
-      latlng: [-8.088625382550122, 112.2145223850462],
-      gambar: "garum-farm.jpg",
-      link: "https://maps.app.goo.gl/53KcxSRfZRQrQJt78",
-      deskripsi: "Pertanian & Peternakan"
+      nama: "Phawoun Cell",
+      kategori: "umkm",
+      latlng: [-8.077033633484147, 112.21872934086672],
+      gambar: "phawoun-1.jpg",
+      link: "https://maps.app.goo.gl/cBHg5oKwPQ8H6yM8A",
+      deskripsi: "Toko Service Handphone dan laptop"
     },
     {
       nama: "drg. Yosua Nugroho",
@@ -155,7 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
       gambar: "drg.jpg",
       link: "https://maps.app.goo.gl/ZWGYGNErjQDdpSZB6",
       deskripsi: "Praktek Dokter Gigi"
-    }
+    },
+    {
+      nama: "Rujak Bu Wiwik",
+      kategori: "umkm",
+      latlng: [-8.077416039933778, 112.21830018743285],
+      gambar: "rujak.jpg",
+      link: "https://maps.app.goo.gl/A7uTT8sL5mAXkF5P9",
+      deskripsi: "Warung Rujak dan Tahu Telur"
+    },
   ];
 
   // 7. Tambahkan semua marker ke LayerGroup sesuai kategori & icon
