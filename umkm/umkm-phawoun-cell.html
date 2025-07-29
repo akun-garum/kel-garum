@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>UMKM Phawoun Cell | Kelurahan Garum</title>
+<link href="https://www.blitarkota.go.id/assets/images/blitarkota-256.png" rel="icon" type="image/png"/>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="../main.css" rel="stylesheet"/>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .umkm-detail-title { font-size: 2rem; font-weight: bold; color: var(--primary-color);}
+    .umkm-desc { font-size: 1.15em; color: #333;}
+    .umkm-info-list { font-size: 1.08em; margin-bottom: 2rem;}
+    .umkm-info-list strong { color: var(--primary-color);}
+    .umkm-product-list { padding-left: 0; list-style: none;}
+    .umkm-product-list li { background: #f6fcff; border-radius: 10px; margin-bottom: 10px; padding: 10px 16px;}
+    .umkm-location { color: var(--primary-color);}
+    .umkm-contact i { margin-right: 5px; }
+    .umkm-gallery img { border-radius: 8px; margin-right: 10px; margin-bottom: 10px; max-width: 140px; }
+    .btn-back-umkm { margin-top: 30px; }
+  </style>
+</link></head>
+<body class="text-left">
+<div id="navbar-placeholder"></div>
+<div id="main-content-wrapper">
+<div class="page-header">
+<div class="overlay text-on-title text-center">
+        UMKM
+      </div>
+</div>
+<div class="breadcrumb-container">
+<div class="container">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../umkm.html">UMKM</a></li>
+<li aria-current="page" class="breadcrumb-item active">Phawoun Cell</li>
+</ol>
+</nav>
+</div>
+</div>
+<div class="container py-5">
+<h2 class="umkm-detail-title mb-3">Phawoun Cell</h2>
+<div class="row mb-4">
+<div class="col-md-5 col-sm-12 image-umkm">
+<img alt="Phawoun Cell" class="img-fluid welcome-img" src="../assets/images/phawoun-1.jpg"/>
+</div>
+<div class="col-md-7 col-sm-12">
+<div class="umkm-desc mb-2">Phawoun Cell menjadi solusi terbaik untuk permasalahan HP dan laptop, menyediakan layanan servis dan perbaikan dengan tenaga profesional.</div>
+<div class="umkm-info-list mb-2">
+<strong>Kategori:</strong> Jasa <br/>
+<strong>Alamat:</strong> Jl. Majapahit, RT.05/RW.03, Garum, Kec. Garum, Kabupaten Blitar, Jawa Timur 66182 <br/>
+<strong>Lokasi:</strong>
+<a class="umkm-location" href="https://maps.app.goo.gl/AE1eoHSvxNmgPULRA" target="_blank">
+<i class="fas fa-map-marker-alt"></i> Lihat di Google Maps
+</a>
+</div>
+<div class="umkm-contact mb-2"><strong>Kontak:</strong><span><i class="fas fa-phone"></i> 081553802279</span></div>
+</div>
+</div>
+<h5 class="text-on-sub-title mb-2">Daftar Produk / Layanan</h5>
+<ul class="umkm-product-list mb-4">
+<li>
+<strong>Ganti LCD</strong> <br/>
+      Penggantian layar LCD untuk berbagai tipe smartphone.
+    </li>
+
+<li>
+<strong>Ganti Touchscreen</strong> <br/>
+      Servis penggantian layar sentuh yang rusak atau tidak responsif.
+    </li>
+
+<li>
+<strong>Ganti Baterai</strong> <br/>
+      Penggantian baterai HP dan laptop agar kembali optimal.
+    </li>
+
+<li>
+<strong>Ganti Konektor Charger</strong> <br/>
+      Perbaikan port charger yang longgar atau tidak terbaca.
+    </li>
+
+<li>
+<strong>Ganti Tombol</strong> <br/>
+      Perbaikan tombol power, volume, atau tombol lainnya.
+    </li>
+
+<li>
+<strong>Install Ulang / Flash</strong> <br/>
+      Mengatasi error sistem atau bootloop pada perangkat.
+    </li>
+
+<li>
+<strong>Ganti Keyboard</strong> <br/>
+      Penggantian keyboard laptop yang rusak atau tidak berfungsi.
+    </li>
+
+<li>
+<strong>Upgrade SSD</strong> <br/>
+      Meningkatkan kecepatan laptop dengan mengganti ke SSD.
+    </li>
+</ul>
+<h5 class="text-on-sub-title mb-2">Galeri Foto</h5>
+<div class="umkm-gallery mb-4">
+        <img src="../assets/images/phawoun-2.png" alt="[ALT1]" class="image-preview welcome-img" style="width:140px;" onclick="showImage('../assets/images/phawoun-2.png')" />
+        <img src="../assets/images/phawoun-3.jpg" alt="[ALT2]" class="image-preview welcome-img" style="width:140px;" onclick="showImage('../assets/images/phawoun-3.jpg')" />
+        <!-- Tambah gambar galeri lagi kalau perlu -->
+      </div>
+<a class="btn btn-primary btn-back-umkm" href="../umkm.html">
+<i class="fas fa-arrow-left"></i> Kembali ke daftar UMKM
+      </a>
+</div>
+<div class="modal-img" id="imgPopUp">
+<span class="close-img" onclick="closeImage()">×</span>
+<img class="modal-content-img" id="srcImgPopUp"/>
+<div id="captionImgPopUp"></div>
+</div>
+<!--start footer -->
+<div class="footers">
+<div class="container">
+<div class="row mx-0">
+<div class="col-md-12 m-4">
+<p class="text-15 text-white text-center mb-0 font-weight-300">
+                © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
+                Reserved
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!--end footer -->
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>
