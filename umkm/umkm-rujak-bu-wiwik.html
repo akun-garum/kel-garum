@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>UMKM Rujak Bu Wiwik | Kelurahan Garum</title>
+<link href="https://www.blitarkota.go.id/assets/images/blitarkota-256.png" rel="icon" type="image/png"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="../main.css" rel="stylesheet"/>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+    .umkm-detail-title { font-size: 2rem; font-weight: bold; color: var(--primary-color);}
+    .umkm-desc { font-size: 1.15em; color: #333;}
+    .umkm-info-list { font-size: 1.08em; margin-bottom: 2rem;}
+    .umkm-info-list strong { color: var(--primary-color);}
+    .umkm-product-list { padding-left: 0; list-style: none;}
+    .umkm-product-list li { background: #f6fcff; border-radius: 10px; margin-bottom: 10px; padding: 10px 16px;}
+    .umkm-location { color: var(--primary-color);}
+    .umkm-contact i { margin-right: 5px; }
+    .umkm-gallery img { border-radius: 8px; margin-right: 10px; margin-bottom: 10px; max-width: 140px; }
+    .btn-back-umkm { margin-top: 30px; }
+  </style>
+</head>
+<body class="text-left">
+<div id="navbar-placeholder"></div>
+<div id="main-content-wrapper">
+<div class="page-header">
+<div class="overlay text-on-title text-center">
+        UMKM
+      </div>
+</div>
+<div class="breadcrumb-container">
+<div class="container">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../umkm.html">UMKM</a></li>
+<li aria-current="page" class="breadcrumb-item active">Rujak Bu Wiwik</li>
+</ol>
+</nav>
+</div>
+</div>
+<div class="container py-5">
+<h2 class="umkm-detail-title mb-3">Rujak Bu Wiwik</h2>
+<div class="row mb-4">
+<div class="col-md-5 col-sm-12 image-umkm">
+<img alt="Rujak Bu Wiwik" class="img-fluid welcome-img" src="../assets/images/pecel-yatini.jpeg"/>
+</div>
+<div class="col-md-7 col-sm-12">
+<div class="umkm-desc mb-2">Menjual rujak uleg, tahu lontong, dan tahu telor dengan cita rasa khas rumahan yang menggugah selera.</div>
+<div class="umkm-info-list mb-2">
+<strong>Kategori:</strong> Makanan Berat <br/>
+<strong>Alamat:</strong> Garum, Kec. Garum, Kabupaten Blitar, Jawa Timur 66182 <br/>
+<strong>Lokasi:</strong>
+<a class="umkm-location" href="https://maps.app.goo.gl/zHGjPm4X7FrsGymeA" target="_blank">
+<i class="fas fa-map-marker-alt"></i> Lihat di Google Maps
+</a>
+</div>
+<div class="umkm-contact mb-2"><strong>Kontak:</strong><span><i class="fas fa-phone"></i> -</span></div>
+</div>
+</div>
+<h5 class="text-on-sub-title mb-2">Daftar Produk / Layanan</h5>
+<ul class="umkm-product-list mb-4">
+<li>
+<strong>Rujak Uleg</strong> <br/>
+      Harga: <b>Rp 8.000</b> <br/>
+      Rujak uleg khas dengan bumbu kacang segar.
+    </li>
+
+<li>
+<strong>Tahu Lontong</strong> <br/>
+      Harga: <b>Rp 7.000</b> <br/>
+      Perpaduan tahu goreng, lontong, dan sambal khas.
+    </li>
+
+<li>
+<strong>Tahu Telor</strong> <br/>
+      Harga: <b>Rp 9.000</b> <br/>
+      Tahu goreng dengan telur dan bumbu petis.
+    </li>
+
+<li>
+<strong>Sambel Pecel 1 kg</strong> <br/>
+      Harga: <b>Rp 60.000</b> <br/>
+      Sambel pecel kemasan 1 kg, cocok untuk stok dapur.
+    </li>
+
+<li>
+<strong>Sambel Pecel 1/4 kg</strong> <br/>
+      Harga: <b>Rp 16.000</b> <br/>
+      Kemasan kecil sambel pecel untuk konsumsi harian.
+    </li>
+</ul>
+<h5 class="text-on-sub-title mb-2">Galeri Foto</h5>
+<div class="umkm-gallery mb-4">
+        <img src="../assets/images/pecel-yatini-detail.jpeg" alt="[ALT1]" class="image-preview welcome-img" style="width:140px;" onclick="showImage('../assets/images/pecel-yatini-detail.jpeg')" />
+        <!-- Tambah gambar galeri lagi kalau perlu -->
+      </div>
+<a class="btn btn-primary btn-back-umkm" href="../umkm.html">
+<i class="fas fa-arrow-left"></i> Kembali ke daftar UMKM
+      </a>
+</div>
+<div class="modal-img" id="imgPopUp">
+<span class="close-img" onclick="closeImage()">×</span>
+<img class="modal-content-img" id="srcImgPopUp"/>
+<div id="captionImgPopUp"></div>
+</div>
+<!--start footer -->
+<div class="footers">
+<div class="container">
+<div class="row mx-0">
+<div class="col-md-12 m-4">
+<p class="text-15 text-white text-center mb-0 font-weight-300">
+                © Copyright 2024 <b>Kelurahan Garum - Garum</b>. All Rights
+                Reserved
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!--end footer -->
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>
